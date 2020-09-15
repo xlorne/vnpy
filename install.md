@@ -21,16 +21,23 @@
 
 ## 4.安装vnpy
 双击install.bat一键安装vnpy：
-
 先安装ta_lib库和ib api
-
 然后安装requirements.txt文件内相关依赖库
-
 最后复制vnpy到Anaconda内
 
 
 ## 5.启动VN Trader
-在文件夹tests\trader中找到run.py文件。按住“Shift” + 鼠标右键进入cmd窗口，输入下面命令即可启动VN Trader。
+在文件夹example\vn_trader中找到run.py文件。按住“Shift” + 鼠标右键进入cmd窗口，输入下面命令即可启动VN Trader。
 
-python run.py 
-   
+`python run.py`
+
+## QA
+### 1.ModuleNotFoundError: No module named 'PyQt5.sip' 
+According to Agile_Eagle's suggestion from the comments I just uninstalled pyqt5 and pyqt5-tools packages and the reinstalled them. Problem solved!
+```
+pip uninstall PyQt5
+pip uninstall PyQt5-sip
+pip uninstall PyQtWebEngine
+
+```
+原文:https://stackoverflow.com/questions/51808229/pyuic5-modulenotfounderror-no-module-named-pyqt5-sip 
